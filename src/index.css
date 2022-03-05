@@ -1,5 +1,11 @@
-body {
+*{
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,3 +17,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #DEDEDE;
+}
+
+/*---Table*/
+
+.table-container{
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 0 10px gray;
+  padding: 20px;
+}
+
+.table-container h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-container table{
+  
+  border-collapse: collapse; 
+  background:#fbfafa;
+  border-radius:6px;
+  overflow:hidden;
+}
+
+.table-container thead{
+  background-color: #FFED86;
+}
+
+.table-container th{
+  font-size: 20px;
+  padding: 10px;
+}
+.table-container table tbody tr{
+  
+  border-bottom: 1px solid #DEDEDE;
+}
+
+.table-container td{
+  font-size: 20px;
+  padding: 10px;
+}
+
+
+
+/*---End of table---*/

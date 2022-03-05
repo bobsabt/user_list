@@ -1,5 +1,6 @@
 import React from 'react'
 import User from './User';
+import Pagination from './Pagination';
 import useGetAllData from '../Utils/useGetAllData';
 
 
@@ -7,9 +8,17 @@ const Users = () => {
     const results= useGetAllData();
     const { data = [] } = results;
 
+    const [stationsPerPage, setStationsPerPage] = React.useState(10);
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const [isShowNew, setIsShowNew] = React.useState(false);
+
+  const indexOfLastPost = currentPage*stationsPerPage;
+  const indexOfFirstPots = indexOfLastPost- stationsPerPage;
+  const currentStations = data.slice(indexOfFirstPots,indexOfLastPost);  
+
   return (
-    <div>
-        <h1>UUSEr</h1>
+    <div className='table-container'>
+        <h1>User list</h1>
         <table>
             <thead>
                 <tr>
@@ -21,7 +30,7 @@ const Users = () => {
                 </tr>  
             </thead>
             <tbody>
-            {data.map((user,index) => <User
+            {currentStations.map((user,index) => <User
                 key={index}
                 firstname={user.first_name}
                 lastname={user.last_name}
@@ -32,6 +41,12 @@ const Users = () => {
             )}
             </tbody>
         </table>
+        <Pagination
+        currentPage ={currentPage}
+        setCurrentPage = {setCurrentPage}
+        stationsPerPage ={stationsPerPage}
+        total={data.length}
+        />
     </div>
   )
 }
