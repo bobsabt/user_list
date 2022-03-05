@@ -1,14 +1,16 @@
 import React from 'react'
 import User from './User';
 import Pagination from './Pagination';
+import Newuser from './Newuser';
 import useGetAllData from '../Utils/useGetAllData';
 
 
 const Users = () => {
     const results= useGetAllData();
     const { data = [] } = results;
+    
 
-    const [stationsPerPage, setStationsPerPage] = React.useState(10);
+const [stationsPerPage, setStationsPerPage] = React.useState(10);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [isShowNew, setIsShowNew] = React.useState(false);
 
@@ -16,9 +18,14 @@ const Users = () => {
   const indexOfFirstPots = indexOfLastPost- stationsPerPage;
   const currentStations = data.slice(indexOfFirstPots,indexOfLastPost);  
 
+  const onClickShowNew = () =>{
+    setIsShowNew(true)
+}
+
   return (
     <div className='table-container'>
         <h1>User list</h1>
+        <button onClick={onClickShowNew}>New</button>
         <table>
             <thead>
                 <tr>
@@ -47,6 +54,7 @@ const Users = () => {
         stationsPerPage ={stationsPerPage}
         total={data.length}
         />
+        {isShowNew && <Newuser setIsShowNew={setIsShowNew}/>}
     </div>
   )
 }

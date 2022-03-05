@@ -6,7 +6,7 @@ const User = ({firstname, lastname, createdat, status, id}) => {
     const [active, setActive] = React.useState(status)
     
     
-    const onClickChangeStatus = async() => {
+    const onClickChangeStatus = () => {
         setActive(!active)
         const sendStatus = {
             "id": id,

@@ -33,6 +33,7 @@ code {
   width: 100%;
   box-shadow: 0 0 10px gray;
   padding: 20px;
+  position: relative;
 }
 
 .table-container h1{
@@ -131,3 +132,78 @@ code {
 
 
 /*---End of Status---*/
+
+/*---Form---*/
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+  height: 100%;
+  background-color: #dededed0;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+
+}
+
+.form-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid beige;
+  background-color: #fbfafa;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  
+}
+
+.form-box h1{
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+.form-box div{
+  width: 320px;
+  margin: 10px 0 30px 0;
+}
+
+.form-box input{
+  padding: 5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.form-box p{
+  font-weight: bold;
+}
+
+
+.status-box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-box select{
+  width: 100px;
+  text-align: center;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-container button{
+  padding: 10px 5px;
+  width: 80px;
+}
+
+.btn-container :nth-child(1){
+  margin-right: 30px;
+}
+
+
+/*---End of Form---*/
