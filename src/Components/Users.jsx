@@ -6,7 +6,6 @@ import useGetAllData from '../Utils/useGetAllData';
 const Users = () => {
     const results= useGetAllData();
     const { data = [] } = results;
-    console.log(results)
 
   return (
     <div>
@@ -22,7 +21,8 @@ const Users = () => {
                 </tr>  
             </thead>
             <tbody>
-            {data.map(user => <User
+            {data.map((user,index) => <User
+                key={index}
                 firstname={user.first_name}
                 lastname={user.last_name}
                 createdat={user.created_at}
