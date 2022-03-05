@@ -31,11 +31,11 @@ const Newuser = ({ setIsShowNew }) => {
     setIsShowNew(false);
   }
   return (
-    <div className="form-container">
-      <div className="form-box">
+    <div className="form-container placement">
+      <div className="form-box placement">
           <h1>Create new user</h1>
         <div>
-          <p>First name:</p>
+          <label>First name:</label>
           <input
             type="text"
             placeholder="Please write a first name here..."
@@ -44,7 +44,7 @@ const Newuser = ({ setIsShowNew }) => {
           />
         </div>
         <div>
-          <p>Last name:</p>
+          <label>Last name:</label>
           <input
             type="text"
             placeholder="Please write a last name here..."
@@ -63,9 +63,9 @@ const Newuser = ({ setIsShowNew }) => {
             <option>locked</option>
           </select>
         </div>
-        <div className="btn-container">
-        <button onClick={postNewUser}>Send</button>
-        <button onClick={onClickCloseForm}>Close</button>
+        <div className="btn-container placement">
+        <button onClick={postNewUser}>Create</button>
+        <button onClick={onClickCloseForm}>Cancel</button>
         </div>
       </div>
     </div>

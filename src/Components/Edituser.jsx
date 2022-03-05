@@ -31,8 +31,8 @@ const Edituser = ({names, setShowEdit, id}) => {
 
 
   return (
-    <div className="form-container">
-        <div className="form-box">
+    <div className="form-container placement">
+        <div className="form-box placement">
         <h1>Update user data</h1>
         <div>
                 <p>FirstName:</p>
@@ -42,7 +42,7 @@ const Edituser = ({names, setShowEdit, id}) => {
                 <p>Lastname:</p>
                 <input type="text" placeholder="Please give password..." value={modifiedlastname} onChange={(e)=>setModifiedLastname(e.target.value)}/>
             </div>     
-            <div className="btn-container">   
+            <div className="btn-container placement">   
         <button onClick={onClickEdit}>Modify</button>
         <button onClick={close}>Close</button>
         </div>
