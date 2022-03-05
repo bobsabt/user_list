@@ -56,7 +56,7 @@ const [stationsPerPage, setStationsPerPage] = React.useState(10);
         stationsPerPage ={stationsPerPage}
         total={data.length}
         />
-        <button onClick={onClickShowNew}>New</button>
+        <button className="btn-newuser" onClick={onClickShowNew}>New user</button>
 
         </div>
         {isShowNew && <Newuser setIsShowNew={setIsShowNew}/>}
