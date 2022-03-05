@@ -26,7 +26,7 @@ const [stationsPerPage, setStationsPerPage] = React.useState(10);
     <div className='table-container placement'>
         
         <h1>User list</h1>
-        <button onClick={onClickShowNew}>New</button>
+        
         <table>
             <thead>
                 <tr>
@@ -49,12 +49,16 @@ const [stationsPerPage, setStationsPerPage] = React.useState(10);
             )}
             </tbody>
         </table>
+        <div className='footer-container placement'>
         <Pagination
         currentPage ={currentPage}
         setCurrentPage = {setCurrentPage}
         stationsPerPage ={stationsPerPage}
         total={data.length}
         />
+        <button onClick={onClickShowNew}>New</button>
+
+        </div>
         {isShowNew && <Newuser setIsShowNew={setIsShowNew}/>}
     </div>
     

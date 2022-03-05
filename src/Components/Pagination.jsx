@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const Pagination = ({
   currentPage,
@@ -49,12 +51,12 @@ const Pagination = ({
 
   return (
     <div>
-      <ul className="pagenumbers">
+      <ul className="pagenumbers placement">
         <button
           onClick={handleClickPrev}
           disabled={currentPage === pages[0] ? true : false}
-        >
-          Previous
+        ><FontAwesomeIcon className="btn-next-prev"icon={faAngleLeft} />
+         
         </button>
         {pageDecrementBtn}
         {pages.map((number) =>
@@ -74,7 +76,7 @@ const Pagination = ({
           onClick={handleClickNext}
           disabled={currentPage === pages[pages.length - 1] ? true : false}
         >
-          Next
+          <FontAwesomeIcon className="btn-next-prev" icon={faAngleRight} />
         </button>
       </ul>
     </div>
