@@ -76,6 +76,10 @@ code {
   padding: 5px;
 }
 
+.text-locked{
+  text-decoration: line-through;
+}
+
 .changeoptions {
   text-align: center;
 }
