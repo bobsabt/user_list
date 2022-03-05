@@ -1,6 +1,8 @@
 import React from 'react'
 import useChangeStatus from '../Utils/useChangeStatus';
 import Edituser from './Edituser'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserPen } from '@fortawesome/free-solid-svg-icons';
 
 const User = ({firstname, lastname, createdat, status, id}) => {
 
@@ -49,7 +51,7 @@ const User = ({firstname, lastname, createdat, status, id}) => {
             <td>       
                 <button className={active ? "on": "off"} onClick={onClickChangeStatus}>{active ? "ACTIVE": "LOCKED"}</button>
             </td>
-            <td ><button onClick={onClickModify}>EDIT</button></td>
+            <td ><button className="btn-edit" onClick={onClickModify}><FontAwesomeIcon className="btn-next-prev"icon={faUserPen} /></button></td>
         </tr>
         <>
         {showEdit && <Edituser id={id} names={names} setShowEdit={setShowEdit}/>}
