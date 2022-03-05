@@ -226,3 +226,17 @@ code {
   margin-right: 30px;
 }
 /*---End of Form---*/
+
+@media screen and (max-width:800px){
+  .table-container{
+    margin: 10px;
+  }
+}
+@media screen and (max-width:550px){
+  .table-container{
+    padding: 10px;
+  }
+  .table-container th, .table-container td{
+    font-size: 0.8rem;
+  }
+}
