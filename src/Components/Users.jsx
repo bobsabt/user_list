@@ -23,7 +23,8 @@ const [stationsPerPage, setStationsPerPage] = React.useState(10);
 }
 
   return (
-    <div className='table-container'>
+    <div className='table-container placement'>
+        
         <h1>User list</h1>
         <button onClick={onClickShowNew}>New</button>
         <table>
@@ -56,6 +57,7 @@ const [stationsPerPage, setStationsPerPage] = React.useState(10);
         />
         {isShowNew && <Newuser setIsShowNew={setIsShowNew}/>}
     </div>
+    
   )
 }
 

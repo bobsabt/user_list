@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
 }
 
 body {
@@ -19,18 +18,22 @@ code {
 }
 
 .App{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   background-color: #DEDEDE;
 }
 
-/*---Table*/
+.placement{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+/*---Table*/
 .table-container{
-  max-width: 1000px;
+  flex-direction: column;
+  max-width: 800px;
   width: 100%;
+  border-radius: 6px;
   box-shadow: 0 0 10px gray;
   padding: 20px;
   position: relative;
@@ -38,15 +41,15 @@ code {
 
 .table-container h1{
   text-align: center;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
 .table-container table{
-  
   border-collapse: collapse; 
   background:#fbfafa;
-  border-radius:6px;
-  overflow:hidden;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .table-container thead{
@@ -54,17 +57,16 @@ code {
 }
 
 .table-container th{
-  font-size: 20px;
+  font-size: 1rem;
   padding: 10px;
 }
 .table-container table tbody tr{
-  
   border-bottom: 1px solid #DEDEDE;
 }
 
 .table-container td{
-  font-size: 20px;
-  padding: 10px;
+  font-size: 1rem;
+  padding: 5px;
 }
 
 /*---End of table---*/
