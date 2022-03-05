@@ -33,7 +33,7 @@ const [stationsPerPage, setStationsPerPage] = React.useState(10);
                     <th>First name</th>
                     <th>Last name</th>
                     <th>Created</th>
-                    <th>Active</th>
+                    <th>Status</th>
                     <th>Update</th>
                 </tr>  
             </thead>
@@ -42,7 +42,7 @@ const [stationsPerPage, setStationsPerPage] = React.useState(10);
                 key={index}
                 firstname={user.first_name}
                 lastname={user.last_name}
-                createdat={user.created_at}
+                createdat={user.created_at.substring(0,10) + ", "+ user.created_at.substring(11,16)}
                 status={user.status === "active" ? true : false}
                 id={user.id}
                />
