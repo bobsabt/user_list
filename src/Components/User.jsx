@@ -1,9 +1,12 @@
 import React from 'react'
 import useChangeStatus from '../Utils/useChangeStatus';
+import Edituser from './Edituser'
 
 const User = ({firstname, lastname, createdat, status, id}) => {
 
     const [active, setActive] = React.useState(status)
+    const [showEdit, setShowEdit] = React.useState(false)
+    const [names, setNames] = React.useState({firstname:"", lastname:""})
     
     
     const onClickChangeStatus = () => {
@@ -25,6 +28,16 @@ const User = ({firstname, lastname, createdat, status, id}) => {
         body: JSON.stringify(sendStatus)}) 
         .then(data => console.log(data));
     }
+
+    const onClickModify = async() => {
+        fetch(`https://assessment-users-backend.herokuapp.com/users/${id}`)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+          setNames({firstname:data.first_name, lastname:data.last_name})
+          setShowEdit(true)
+        });
+    }
     
 
   return (
@@ -36,7 +49,11 @@ const User = ({firstname, lastname, createdat, status, id}) => {
             <td>       
                 <button className={active ? "on": "off"} onClick={onClickChangeStatus}>{active ? "ACTIVE": "LOCKED"}</button>
             </td>
+            <td ><button onClick={onClickModify}>EDIT</button></td>
         </tr>
+        <>
+        {showEdit && <Edituser id={id} names={names} setShowEdit={setShowEdit}/>}
+        </>
     </>
   )
 }

@@ -33,7 +33,7 @@ const Newuser = ({ setIsShowNew }) => {
   return (
     <div className="form-container">
       <div className="form-box">
-          <h1>Update user data</h1>
+          <h1>Create new user</h1>
         <div>
           <p>First name:</p>
           <input
