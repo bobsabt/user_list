@@ -27,13 +27,14 @@ const Newuser = ({ setIsShowNew }) => {
     setIsShowNew(false);
   };
 
-  const onClickCloseForm = ()=>{
+  const onClickCloseForm = () => {
     setIsShowNew(false);
-  }
+  };
+  
   return (
     <div className="form-container placement">
       <div className="form-box placement">
-          <h1>Create new user</h1>
+        <h1>Create new user</h1>
         <div>
           <label>First name:</label>
           <input
@@ -64,8 +65,8 @@ const Newuser = ({ setIsShowNew }) => {
           </select>
         </div>
         <div className="btn-container placement">
-        <button onClick={postNewUser}>Create</button>
-        <button onClick={onClickCloseForm}>Cancel</button>
+          <button onClick={postNewUser}>Create</button>
+          <button onClick={onClickCloseForm}>Cancel</button>
         </div>
       </div>
     </div>
