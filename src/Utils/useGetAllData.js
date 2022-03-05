@@ -11,7 +11,7 @@ const useGetAllData = () => {
         console.log(data);
       });
   }, []);
-  return data;
+  return {data};
 };
 
 export default useGetAllData;
