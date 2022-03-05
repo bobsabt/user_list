@@ -48,10 +48,10 @@ const User = ({firstname, lastname, createdat, status, id}) => {
             <td className={active ? "": "text-locked"}>{firstname}</td>
             <td className={active ? "": "text-locked"}>{lastname}</td>
             <td className={active ? "": "text-locked"}>{createdat}</td>
-            <td>       
+            <td className='changeoptions'>       
                 <button className={active ? "on": "off"} onClick={onClickChangeStatus}>{active ? "ACTIVE": "LOCKED"}</button>
             </td>
-            <td ><button className="btn-edit" onClick={onClickModify}><FontAwesomeIcon className="btn-next-prev"icon={faUserPen} /></button></td>
+            <td className='changeoptions'><button className="btn-edit" onClick={onClickModify}><FontAwesomeIcon className="btn-next-prev"icon={faUserPen} /></button></td>
         </tr>
         <>
         {showEdit && <Edituser id={id} names={names} setShowEdit={setShowEdit}/>}

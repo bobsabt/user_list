@@ -63,6 +63,10 @@ code {
   padding: 10px;
 }
 
+.table-container th:nth-child(n+4){
+  text-align: center;
+}
+
 .table-container table tbody tr{
   border-bottom: 1px solid #DEDEDE;
 }
@@ -70,6 +74,10 @@ code {
 .table-container td{
   font-size: 1rem;
   padding: 5px;
+}
+
+.changeoptions{
+  text-align: center;
 }
 
 .btn-edit{
