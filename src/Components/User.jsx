@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPen } from "@fortawesome/free-solid-svg-icons";
 
 const User = ({ firstname, lastname, createdat, status, id }) => {
+
   const [active, setActive] = React.useState(status);
   const [showEdit, setShowEdit] = React.useState(false);
   const [names, setNames] = React.useState({ firstname: "", lastname: "" });
@@ -29,7 +30,7 @@ const User = ({ firstname, lastname, createdat, status, id }) => {
     }).then((data) => console.log(data));
   };
 
-  const onClickModify = async () => {
+  const onClickModify = () => {
     fetch(`https://assessment-users-backend.herokuapp.com/users/${id}`)
       .then((response) => response.json())
       .then((data) => {

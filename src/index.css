@@ -240,7 +240,7 @@ code {
   .table-container {
     margin: 10px;
   }
-  
+
   .table-container th {
     padding: 10px 5px;
   }
@@ -270,6 +270,5 @@ code {
   .footer-container {
     width: 100%;
     justify-content: space-between;
-    border: 2px solid rebeccapurple;
   }
 }
