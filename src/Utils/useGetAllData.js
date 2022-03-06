@@ -9,14 +9,14 @@ const useGetAllData = () => {
       .then((response) => response.json())
       .then((data) => {
         setData(data);
-        document.title="UserList"
+        document.title = "UserList";
         setIsLoading(false);
       })
-      .catch(error=>{
-        console.log(error)
+      .catch((error) => {
+        console.log(error);
       });
   }, []);
-  return {data, isLoading};
+  return { data, isLoading };
 };
 
 export default useGetAllData;
