@@ -3,10 +3,10 @@ import User from "./User";
 import Pagination from "./Pagination";
 import Newuser from "./Newuser";
 import useGetAllData from "../Utils/useGetAllData";
+import '../loadingmask.css';
 
 const Users = () => {
-  const results = useGetAllData();
-  const { data = [] } = results;
+  const {isLoading, data = []} = useGetAllData();
 
   const [stationsPerPage, setStationsPerPage] = React.useState(10);
   const [currentPage, setCurrentPage] = React.useState(1);
@@ -22,8 +22,11 @@ const Users = () => {
 
   return (
     <div className="table-container placement">
+      {isLoading ? 
+        <div className='lmask'></div>
+        :
+      <>
       <h1>User list</h1>
-
       <table>
         <thead>
           <tr>
@@ -61,7 +64,7 @@ const Users = () => {
         <button className="btn-newuser" onClick={onClickShowNew}>
           New user
         </button>
-      </div>
+      </div></>}
       {isShowNew && <Newuser setIsShowNew={setIsShowNew} />}
     </div>
   );
