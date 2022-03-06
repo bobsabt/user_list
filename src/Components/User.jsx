@@ -8,38 +8,22 @@ const User = ({ firstname, lastname, createdat, status, id }) => {
   const [active, setActive] = React.useState(status);
   const [showEdit, setShowEdit] = React.useState(false);
   const [names, setNames] = React.useState({ firstname: "", lastname: "" });
+  const editStatus = require("../Utils/editstatus");
+  const getOneUser = require("../Utils/getoneuserbyid");
 
   const onClickChangeStatus = () => {
     setActive(!active);
-    const sendStatus = {
+
+    const newStatus = {
       id: id,
       status: active === true ? (status = "locked") : (status = "active"),
     };
-    console.log(sendStatus);
 
-    fetch(`https://assessment-users-backend.herokuapp.com/users/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "PUT,POST,GET,DELETE,OPTIONS,PATCH",
-        "Access-Control-Allow-Headers":
-          "Content-Type,Content-Length,Server,Date,access-control-allow-methods,access-control-allow-origin",
-      },
-      body: JSON.stringify(sendStatus),
-    }).then((data) => console.log(data));
+    editStatus(id, newStatus)  
   };
 
   const onClickModify = () => {
-    fetch(`https://assessment-users-backend.herokuapp.com/users/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setNames({ firstname: data.first_name, lastname: data.last_name });
-        setShowEdit(true);
-      })
-      .catch((error)=>{
-        console.log(error)});
+    getOneUser(id, setNames, setShowEdit)
   };
 
   return (
