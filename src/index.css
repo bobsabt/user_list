@@ -10,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #dedede;
 }
 
 code {
@@ -19,7 +20,6 @@ code {
 
 .App {
   height: 100vh;
-  background-color: #dedede;
 }
 
 .placement {
@@ -76,7 +76,7 @@ code {
   padding: 5px;
 }
 
-.text-locked{
+.text-locked {
   text-decoration: line-through;
 }
 
@@ -151,6 +151,10 @@ code {
 .btn-next-prev {
   font-size: 1rem;
 }
+.footer-container {
+  display: flex;
+  align-items: center;
+}
 
 .btn-newuser {
   background-color: #ffed86;
@@ -199,7 +203,8 @@ code {
   margin-top: 10px;
 }
 
-.form-box label, .status-box p {
+.form-box label,
+.status-box p {
   font-weight: bold;
 }
 
@@ -222,7 +227,7 @@ code {
   margin-top: 10px;
 }
 
-.btn-container button:active{
+.btn-container button:active {
   background-color: #ffed86;
 }
 
@@ -231,16 +236,40 @@ code {
 }
 /*---End of Form---*/
 
-@media screen and (max-width:800px){
-  .table-container{
+@media screen and (max-width: 800px) {
+  .table-container {
     margin: 10px;
   }
+  
+  .table-container th {
+    padding: 10px 5px;
+  }
+
+  .table-container th,
+  .table-container td {
+    font-size: 0.8rem;
+  }
 }
-@media screen and (max-width:550px){
-  .table-container{
+
+@media screen and (max-width: 550px) {
+  .table-container {
     padding: 10px;
   }
-  .table-container th, .table-container td{
-    font-size: 0.8rem;
+}
+
+@media screen and (max-width: 375px) {
+  .pagenumbers {
+    margin: 10px 0px 15px 0;
+  }
+
+  .btn-newuser {
+    position: relative;
+    margin-right: 0;
+  }
+
+  .footer-container {
+    width: 100%;
+    justify-content: space-between;
+    border: 2px solid rebeccapurple;
   }
 }

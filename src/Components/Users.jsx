@@ -54,7 +54,7 @@ const Users = () => {
           ))}
         </tbody>
       </table>
-      <div className="footer-container placement">
+      <div className="footer-container">
         <Pagination
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
