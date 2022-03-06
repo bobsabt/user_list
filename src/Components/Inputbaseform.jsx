@@ -1,6 +1,6 @@
 import React from "react";
 
-const Inputbaseform = ({ title, firstvalue, setFirstValue, lastvalue, setLastValue }) => {
+const Inputbaseform = ({ title, firstvalue, setFirstValue, lastvalue, setLastValue, onChangeErrorMessage }) => {
   return (
     <>
       <h1>{title}</h1>
@@ -11,6 +11,7 @@ const Inputbaseform = ({ title, firstvalue, setFirstValue, lastvalue, setLastVal
           placeholder="Please give your name..."
           value={firstvalue}
           onChange={(e) => setFirstValue(e.target.value)}
+          onKeyUp={onChangeErrorMessage}
         />
       </div>
       <div>
@@ -20,6 +21,7 @@ const Inputbaseform = ({ title, firstvalue, setFirstValue, lastvalue, setLastVal
           placeholder="Please give password..."
           value={lastvalue}
           onChange={(e) => setLastValue(e.target.value)}
+          onKeyUp={onChangeErrorMessage}
         />
       </div>
     </>

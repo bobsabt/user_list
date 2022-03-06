@@ -4,8 +4,16 @@ import Inputbaseform from "./Inputbaseform";
 const Edituser = ({ names, setShowEdit, id }) => {
   const [modifiedfirstname, setModifedFirstname] = React.useState(names.firstname);
   const [modifiedlastname, setModifiedLastname] = React.useState(names.lastname);
+  const [isErrorMessage, setisErrorMessage] = React.useState(false);
 
   const onClickEdit = () => {
+    setisErrorMessage(false)
+    
+
+    if(modifiedfirstname.length === 0 || modifiedlastname.length === 0){
+        setisErrorMessage(true);
+        return;
+    }
 
     const modifiednames = {
       first_name: modifiedfirstname,
@@ -41,6 +49,7 @@ const Edituser = ({ names, setShowEdit, id }) => {
           lastvalue={modifiedlastname}
           setLastValue={setModifiedLastname}
         />
+        {isErrorMessage && <p>Empty firstname/lastname not allowed</p>}
         <div className="btn-container placement">
           <button onClick={onClickEdit}>Modify</button>
           <button onClick={close}>Close</button>

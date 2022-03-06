@@ -5,8 +5,14 @@ const Newuser = ({ setIsShowNew }) => {
   const [firstname, setFirstname] = React.useState("");
   const [lastname, setLastname] = React.useState("");
   const [status, setStatus] = React.useState("active");
+  const [isErrorMessage, setisErrorMessage] = React.useState(false);
 
   const postNewUser = async () => {
+
+    if(firstname.length === 0 || lastname.length === 0){
+      setisErrorMessage(true);
+      return;
+  }
     const newUser = {
       first_name: firstname,
       last_name: lastname,
@@ -33,6 +39,10 @@ const Newuser = ({ setIsShowNew }) => {
     setIsShowNew(false);
   };
 
+  const onChangeErrorMessage = () => {
+    setisErrorMessage(false);
+  };
+
   return (
     <div className="form-container placement">
       <div className="form-box placement">
@@ -42,6 +52,7 @@ const Newuser = ({ setIsShowNew }) => {
           setFirstValue={setFirstname}
           lastvalue={lastname}
           setLastValue={setLastname}
+          onChangeErrorMessage={onChangeErrorMessage}
         />
         <div className="status-box">
           <p>Status:</p>
@@ -54,6 +65,7 @@ const Newuser = ({ setIsShowNew }) => {
             <option>locked</option>
           </select>
         </div>
+        {isErrorMessage && <p>Empty firstname/lastname are not allowed</p>}
         <div className="btn-container placement">
           <button onClick={postNewUser}>Create</button>
           <button onClick={onClickCloseForm}>Cancel</button>
