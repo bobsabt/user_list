@@ -3,12 +3,12 @@ import User from "./User";
 import Pagination from "./Pagination";
 import Newuser from "./Newuser";
 import useGetAllData from "../Utils/useGetAllData";
-import '../loadingmask.css';
+import "../loadingmask.css";
 
 const Users = () => {
-  const {isLoading, data = []} = useGetAllData();
+  const { isLoading, data = [] } = useGetAllData();
 
-  const [stationsPerPage, setStationsPerPage] = React.useState(10);
+  const stationsPerPage = 10;
   const [currentPage, setCurrentPage] = React.useState(1);
   const [isShowNew, setIsShowNew] = React.useState(false);
 
@@ -22,49 +22,51 @@ const Users = () => {
 
   return (
     <div className="table-container placement">
-      {isLoading ? 
-        <div className='lmask'></div>
-        :
-      <>
-      <h1>User list</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Created</th>
-            <th>Status</th>
-            <th>Update</th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentStations.map((user, index) => (
-            <User
-              key={index}
-              firstname={user.first_name}
-              lastname={user.last_name}
-              createdat={
-                user.created_at.substring(0, 10) +
-                ", " +
-                user.created_at.substring(11, 16)
-              }
-              status={user.status === "active" ? true : false}
-              id={user.id}
+      {isLoading ? (
+        <div className="lmask"></div>
+      ) : (
+        <>
+          <h1>User list</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Created</th>
+                <th>Status</th>
+                <th>Update</th>
+              </tr>
+            </thead>
+            <tbody>
+              {currentStations.map((user, index) => (
+                <User
+                  key={index}
+                  firstname={user.first_name}
+                  lastname={user.last_name}
+                  createdat={
+                    user.created_at.substring(0, 10) +
+                    ", " +
+                    user.created_at.substring(11, 16)
+                  }
+                  status={user.status === "active" ? true : false}
+                  id={user.id}
+                />
+              ))}
+            </tbody>
+          </table>
+          <div className="footer-container">
+            <Pagination
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              stationsPerPage={stationsPerPage}
+              total={data.length}
             />
-          ))}
-        </tbody>
-      </table>
-      <div className="footer-container">
-        <Pagination
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          stationsPerPage={stationsPerPage}
-          total={data.length}
-        />
-        <button className="btn-newuser" onClick={onClickShowNew}>
-          New user
-        </button>
-      </div></>}
+            <button className="btn-newuser" onClick={onClickShowNew}>
+              New user
+            </button>
+          </div>
+        </>
+      )}
       {isShowNew && <Newuser setIsShowNew={setIsShowNew} />}
     </div>
   );
