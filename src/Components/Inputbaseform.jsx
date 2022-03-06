@@ -9,6 +9,7 @@ const Inputbaseform = ({ title, firstvalue, setFirstValue, lastvalue, setLastVal
         <input
           type="text"
           placeholder="Please give your name..."
+          maxLength={30}
           value={firstvalue}
           onChange={(e) => setFirstValue(e.target.value)}
           onKeyUp={onChangeErrorMessage}
@@ -19,6 +20,7 @@ const Inputbaseform = ({ title, firstvalue, setFirstValue, lastvalue, setLastVal
         <input
           type="text"
           placeholder="Please give password..."
+          maxLength={30}
           value={lastvalue}
           onChange={(e) => setLastValue(e.target.value)}
           onKeyUp={onChangeErrorMessage}

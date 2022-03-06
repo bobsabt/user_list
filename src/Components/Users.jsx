@@ -41,8 +41,16 @@ const Users = () => {
               {currentStations.map((user, index) => (
                 <User
                   key={index}
-                  firstname={user.first_name}
-                  lastname={user.last_name}
+                  firstname={
+                    user.first_name.length > 10
+                      ? user.first_name.substring(0, 10) + "..."
+                      : user.first_name
+                  }
+                  lastname={
+                    user.last_name.length > 10
+                      ? user.last_name.substring(0, 10) + "..."
+                      : user.last_name
+                  }
                   createdat={
                     user.created_at.substring(0, 10) +
                     ", " +
