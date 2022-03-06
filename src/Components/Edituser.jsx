@@ -1,4 +1,5 @@
 import React from "react";
+import Inputbaseform from "./Inputbaseform";
 
 const Edituser = ({ names, setShowEdit, id }) => {
   const [modifiedfirstname, setModifedFirstname] = React.useState(names.firstname);
@@ -33,25 +34,13 @@ const Edituser = ({ names, setShowEdit, id }) => {
   return (
     <div className="form-container placement">
       <div className="form-box placement">
-        <h1>Update user data</h1>
-        <div>
-          <label>FirstName:</label>
-          <input
-            type="text"
-            placeholder="Please give your name..."
-            value={modifiedfirstname}
-            onChange={(e) => setModifedFirstname(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Lastname:</label>
-          <input
-            type="text"
-            placeholder="Please give password..."
-            value={modifiedlastname}
-            onChange={(e) => setModifiedLastname(e.target.value)}
-          />
-        </div>
+      <Inputbaseform
+          title={"Create new user"} 
+          firstvalue={modifiedfirstname} 
+          setFirstValue={setModifedFirstname}
+          lastvalue={modifiedlastname}
+          setLastValue={setModifiedLastname}
+        />
         <div className="btn-container placement">
           <button onClick={onClickEdit}>Modify</button>
           <button onClick={close}>Close</button>

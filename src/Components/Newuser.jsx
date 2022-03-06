@@ -1,4 +1,5 @@
 import React from "react";
+import Inputbaseform from "./Inputbaseform";
 
 const Newuser = ({ setIsShowNew }) => {
   const [firstname, setFirstname] = React.useState("");
@@ -35,25 +36,13 @@ const Newuser = ({ setIsShowNew }) => {
   return (
     <div className="form-container placement">
       <div className="form-box placement">
-        <h1>Create new user</h1>
-        <div>
-          <label>First name:</label>
-          <input
-            type="text"
-            placeholder="Please write a first name here..."
-            value={firstname}
-            onChange={(e) => setFirstname(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Last name:</label>
-          <input
-            type="text"
-            placeholder="Please write a last name here..."
-            value={lastname}
-            onChange={(e) => setLastname(e.target.value)}
-          />
-        </div>
+        <Inputbaseform
+          title={"Create new user"} 
+          firstvalue={firstname} 
+          setFirstValue={setFirstname}
+          lastvalue={lastname}
+          setLastValue={setLastname}
+        />
         <div className="status-box">
           <p>Status:</p>
           <select
