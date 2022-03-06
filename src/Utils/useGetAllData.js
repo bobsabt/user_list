@@ -10,6 +10,9 @@ const useGetAllData = () => {
       .then((data) => {
         setData(data);
         setIsLoading(false);
+      })
+      .catch(error=>{
+        console.log(error)
       });
   }, []);
   return {data, isLoading};

@@ -22,15 +22,16 @@ const Newuser = ({ setIsShowNew }) => {
           "Content-Type,Content-Length,Server,Date,access-control-allow-methods,access-control-allow-origin",
       },
       body: JSON.stringify(newUser),
-    }).then((data) => console.log(data));
-
-    setIsShowNew(false);
+    }).then((data) => console.log(data))
+    setIsShowNew(false)
+    .catch((error)=>{
+      console.log(error)});
   };
 
   const onClickCloseForm = () => {
     setIsShowNew(false);
   };
-  
+
   return (
     <div className="form-container placement">
       <div className="form-box placement">

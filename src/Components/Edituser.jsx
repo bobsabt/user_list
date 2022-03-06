@@ -21,7 +21,9 @@ const Edituser = ({ names, setShowEdit, id }) => {
           "Content-Type,Content-Length,Server,Date,access-control-allow-methods,access-control-allow-origin",
       },
       body: JSON.stringify(modifiednames),
-    }).then((data) => console.log(data));
+    }).then((data) => console.log(data))
+    .catch((error)=>{
+        console.log(error)});
   };
 
   const close = () => {

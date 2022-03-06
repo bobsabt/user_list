@@ -36,7 +36,9 @@ const User = ({ firstname, lastname, createdat, status, id }) => {
         console.log(data);
         setNames({ firstname: data.first_name, lastname: data.last_name });
         setShowEdit(true);
-      });
+      })
+      .catch((error)=>{
+        console.log(error)});
   };
 
   return (
