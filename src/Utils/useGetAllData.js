@@ -9,6 +9,7 @@ const useGetAllData = () => {
       .then((response) => response.json())
       .then((data) => {
         setData(data);
+        document.title="UserList"
         setIsLoading(false);
       })
       .catch(error=>{

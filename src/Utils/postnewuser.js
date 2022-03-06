@@ -9,7 +9,7 @@ function postnewuser(newObject, setIsShowNew){
         "Content-Type,Content-Length,Server,Date,access-control-allow-methods,access-control-allow-origin",
     },
     body: JSON.stringify(newObject),
-  }).then((data) => setIsShowNew(false))
+  }).then((data) => {setIsShowNew(false); window.location.reload()})
   .catch((error)=>{
     console.log(error)})
   };
