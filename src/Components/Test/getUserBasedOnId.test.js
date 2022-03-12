@@ -16,16 +16,14 @@ describe("getUserBasedOnId", () => {
           last_name: "Big",
           status: "active",
           created_at: "2022",
-          updated_at: "2022"
+          updated_at: "2022",
         },
       ];
       axios.get.mockResolvedValueOnce(user);
 
       const result = await getUserBasedOnId(userId);
 
-      expect(axios.get).toHaveBeenCalledWith(
-        `${BASE_URL}/users/1`,
-      );
+      expect(axios.get).toHaveBeenCalledWith(`${BASE_URL}/users/1`);
       expect(result).toEqual(user);
     });
   });
@@ -38,9 +36,7 @@ describe("getUserBasedOnId", () => {
 
       const result = await getUserBasedOnId(1);
 
-      expect(axios.get).toHaveBeenCalledWith(
-        `${BASE_URL}/users/1`,
-      );
+      expect(axios.get).toHaveBeenCalledWith(`${BASE_URL}/users/1`);
       expect(result).toEqual(message);
     });
   });
