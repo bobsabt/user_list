@@ -8,7 +8,7 @@ const Pagination = ({
   stationsPerPage,
   total,
 }) => {
-  const [pageNumberLimit, setpageNumberLimit] = React.useState(3);
+  const pageNumberLimit = 3;
   const [maxPageNumberLimit, setMaxPageNumberLimit] = React.useState(3);
   const [minPageNumberLimit, setMinPageNumberLimit] = React.useState(0);
 
