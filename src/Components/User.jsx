@@ -4,12 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPen } from "@fortawesome/free-solid-svg-icons";
 
 const User = ({ firstname, lastname, createdat, status, id }) => {
-
   const [active, setActive] = React.useState(status);
   const [showEdit, setShowEdit] = React.useState(false);
   const [names, setNames] = React.useState({ firstname: "", lastname: "" });
   const editStatus = require("../Utils/editstatus");
-  const getOneUser = require("../Utils/getoneuserbyid");
+  const getOneUser = require("../Utils/getuserbyid");
 
   const onClickChangeStatus = () => {
     setActive(!active);
@@ -19,11 +18,11 @@ const User = ({ firstname, lastname, createdat, status, id }) => {
       status: active === true ? (status = "locked") : (status = "active"),
     };
 
-    editStatus(id, newStatus)  
+    editStatus(id, newStatus);
   };
 
   const onClickModify = () => {
-    getOneUser(id, setNames, setShowEdit)
+    getOneUser(id, setNames, setShowEdit);
   };
 
   return (

@@ -8,11 +8,11 @@ const Edituser = ({ names, setShowEdit, id }) => {
   const editUser = require("../Utils/edituser");
 
   const onClickEdit = () => {
-    setisErrorMessage(false)
-    
-    if(modifiedfirstname.length === 0 || modifiedlastname.length === 0){
-        setisErrorMessage(true);
-        return;
+    setisErrorMessage(false);
+
+    if (modifiedfirstname.length === 0 || modifiedlastname.length === 0) {
+      setisErrorMessage(true);
+      return;
     }
 
     const modifiedname = {
@@ -20,7 +20,7 @@ const Edituser = ({ names, setShowEdit, id }) => {
       last_name: modifiedlastname,
     };
 
-    editUser(id, modifiedname, setShowEdit)  
+    editUser(id, modifiedname, setShowEdit);
   };
 
   const close = () => {
@@ -30,9 +30,9 @@ const Edituser = ({ names, setShowEdit, id }) => {
   return (
     <div className="form-container placement">
       <div className="form-box placement">
-      <Inputbaseform
-          title={"Create new user"} 
-          firstvalue={modifiedfirstname} 
+        <Inputbaseform
+          title={"Create new user"}
+          firstvalue={modifiedfirstname}
           setFirstValue={setModifedFirstname}
           lastvalue={modifiedlastname}
           setLastValue={setModifiedLastname}

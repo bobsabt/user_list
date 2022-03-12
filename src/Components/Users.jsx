@@ -7,6 +7,7 @@ import "../loadingmask.css";
 
 const Users = () => {
   const { isLoading, data = [] } = useGetAllData();
+  console.log(isLoading);
 
   const stationsPerPage = 10;
   const [currentPage, setCurrentPage] = React.useState(1);

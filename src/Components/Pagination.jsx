@@ -2,8 +2,12 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
-const Pagination = ({ currentPage, setCurrentPage, stationsPerPage, total }) => {
-
+const Pagination = ({
+  currentPage,
+  setCurrentPage,
+  stationsPerPage,
+  total,
+}) => {
   const [pageNumberLimit, setpageNumberLimit] = React.useState(3);
   const [maxPageNumberLimit, setMaxPageNumberLimit] = React.useState(3);
   const [minPageNumberLimit, setMinPageNumberLimit] = React.useState(0);

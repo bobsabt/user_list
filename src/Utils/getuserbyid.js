@@ -1,4 +1,4 @@
-function getoneuserbyid(id, setNames, setShowEdit) {
+function getuserbyid(id, setNames, setShowEdit) {
   fetch(`https://assessment-users-backend.herokuapp.com/users/${id}`)
     .then((response) => response.json())
     .then((data) => {
@@ -9,4 +9,4 @@ function getoneuserbyid(id, setNames, setShowEdit) {
       console.log(error);
     });
 }
-module.exports = getoneuserbyid;
+module.exports = getuserbyid;

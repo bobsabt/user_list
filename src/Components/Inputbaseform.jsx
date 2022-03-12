@@ -1,6 +1,13 @@
 import React from "react";
 
-const Inputbaseform = ({ title, firstvalue, setFirstValue, lastvalue, setLastValue, onChangeErrorMessage }) => {
+const Inputbaseform = ({
+  title,
+  firstvalue,
+  setFirstValue,
+  lastvalue,
+  setLastValue,
+  onChangeErrorMessage,
+}) => {
   return (
     <>
       <h1>{title}</h1>

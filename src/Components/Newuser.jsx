@@ -9,19 +9,18 @@ const Newuser = ({ setIsShowNew }) => {
   const postNewUser = require("../Utils/postnewuser");
 
   const onClickNewUser = () => {
-
-    if(firstname.length === 0 || lastname.length === 0){
+    if (firstname.length === 0 || lastname.length === 0) {
       setisErrorMessage(true);
       return;
     }
-    
+
     const newUser = {
       first_name: firstname,
       last_name: lastname,
       status: status,
     };
 
-    postNewUser(newUser, setIsShowNew)
+    postNewUser(newUser, setIsShowNew);
   };
 
   const onClickCloseForm = () => {
@@ -36,8 +35,8 @@ const Newuser = ({ setIsShowNew }) => {
     <div className="form-container placement">
       <div className="form-box placement">
         <Inputbaseform
-          title={"Create new user"} 
-          firstvalue={firstname} 
+          title={"Create new user"}
+          firstvalue={firstname}
           setFirstValue={setFirstname}
           lastvalue={lastname}
           setLastValue={setLastname}
