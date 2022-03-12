@@ -14,7 +14,7 @@ async function edituser(id, nameobject, setIsShowEdit) {
         const data = await result
         console.log(data)
         setIsShowEdit(false); 
-        //window.location.reload()  
+        window.location.reload()  
     }   
     catch(error){
         console.log(error);
