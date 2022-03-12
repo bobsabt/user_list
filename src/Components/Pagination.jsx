@@ -25,7 +25,6 @@ const Pagination = ({
     setCurrentPage(currentPage + 1);
 
     if (currentPage + 1 > maxPageNumberLimit) {
-      console.log(pageNumberLimit);
       setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
       setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
     }
