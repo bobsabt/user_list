@@ -9,6 +9,10 @@ function editstatus(id, statusobject) {
         "Content-Type,Content-Length,Server,Date,access-control-allow-methods,access-control-allow-origin",
     },
     body: JSON.stringify(statusobject),
-  }).then((data) => {});
+  })
+    .then((data) => {})
+    .catch((error) => {
+      console.log(error);
+    });
 }
 module.exports = editstatus;
