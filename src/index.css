@@ -255,9 +255,20 @@ code {
   .table-container {
     padding: 10px;
   }
+  .on,
+  .off {
+    font-size: 0.5rem;
+    width: 50px;
+  }
 }
 
 @media screen and (max-width: 375px) {
+  .table-container,
+  th,
+  td {
+    font-size: 0.5rem;
+  }
+
   .pagenumbers {
     margin: 10px 0px 15px 0;
   }

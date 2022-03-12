@@ -42,13 +42,13 @@ const Users = () => {
                 <User
                   key={index}
                   firstname={
-                    user.first_name.length > 10
-                      ? user.first_name.substring(0, 10) + "..."
+                    user.first_name.length > 8
+                      ? user.first_name.substring(0, 8) + "..."
                       : user.first_name
                   }
                   lastname={
                     user.last_name.length > 10
-                      ? user.last_name.substring(0, 10) + "..."
+                      ? user.last_name.substring(0, 8) + "..."
                       : user.last_name
                   }
                   createdat={
